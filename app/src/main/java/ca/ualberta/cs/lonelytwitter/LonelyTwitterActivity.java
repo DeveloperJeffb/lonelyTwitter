@@ -12,6 +12,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -36,13 +37,39 @@ public class LonelyTwitterActivity extends Activity {
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
-			public void onClick(View v) {
-				setResult(RESULT_OK);
-				String text = bodyText.getText().toString();
-				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+//			public void onClick(View v) {
+//				student st1 = new student("zeff", 10); // new creates space in memeory for the object student of the other class
+//				student st2 = new student("jeff");
+//				st1.setName("Zeff");
+//				st1.setAge(10);
+//
+//				Log.d("shaiful", st1.getName());
+//				Log.d("shaiful", Integer.toString(st1.getAge()));
+//				Log.d("shaiful", st2.getName());
+//			}
 
+			public void onClick(View v){
+				Cat cat = new Cat();
+				cat.setType("It's a cat");
+				cat.setFood("cat loves fish");
+				Duck duck = new Duck();
+				duck.setType("it's a wild duck");
+				duck.setFood("Only fish");
+
+
+				DomesticDuck domesticDuck= new DomesticDuck();
+				domesticDuck.setType("it's a domestic Duck");
+				DomesticDuck.setFood("Fish and Rice");
+				cat.swim();
+				domesticDuck.swim();
+				duck.swim();
+				duck.fly();
+				domesticDuck.fly();
+
+//
 			}
+
+
 		});
 	}
 
